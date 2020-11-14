@@ -20,7 +20,7 @@ title                    : "infosecuriosity"
 title_separator          : "|"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "infosecuriosity"
-description              : "tbc"
+description              : "Information and cyber security blog."
 url                      : "https://www.infosecuriosity.co.uk" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "stephent23/stephent23.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
