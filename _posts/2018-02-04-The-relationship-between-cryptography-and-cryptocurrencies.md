@@ -1,0 +1,30 @@
+---
+type: posts
+title: The Relationship Between Cryptography and Cryptocurrencies
+tags: [Cryptography, Cryptocurrency, Blockchain, Digital Signatures]
+category: Cryptography
+classes: wide
+---
+Cryptography and cryptocurrencies are very closely related; cryptography is used in the majority of cryptocurrencies to both control the creation of the currency and to record and verify transactions that use the currency.
+
+One of the most fundamental cryptographic concepts within cryptocurrency is the use of digital signatures. Digital signatures utilise public-key (asymmetric) cryptography and hash functions. In order to create a digital signature of some data, the data to be digitally signed is hashed and this hash is then encrypted with the signing (private) key. Data is then able to be verified by a third party; they do this by decrypting the hash using the verification (public) key of the signer and then hashing the data that they have received. They then compare the hash that they have generated to the hash that they have received from the signer. Digital signatures are used heavily as part of transactions within cryptocurrencies:
+
+<ul>
+	<li>An entity’s cryptocurrency account, commonly referred to as a wallet, is effectively a part of a signing and verification key pair. The verification key is effectively the address that cryptocurrency is able to be sent to.</li>
+	<br />
+	<li>In order to send cryptocurrency, the signing key must be used to digitally sign the transaction.</li>
+</ul>
+
+Digital signatures are used in this way as they provide a number of security properties that are necessary to the success of cryptocurrencies; these are data origin authentication and non-repudiation. In terms of cryptocurrency, data origin authentication is indispensable as it proves that the entity sending the money has the authority to do so; as they need to digitally sign the transaction and this involves using their signing key which should only be known to that individual (i.e. it is secret). Non-repudiation is another necessary property within cryptocurrency as it ensures that no entity is able to later deny a transaction that they made. Further to this, the digital signature also ensures that the transaction is not able to be tampered with as if it is, the transaction would not be able to be verified. This is because the hash that has been encrypted as part of the digital signature, would not match the hash of the tampered transaction. This ensures the integrity of the transaction and also that fraud is not able to be committed.
+
+There are a number of cryptographic risks that are associated with the signing key. Firstly, the key needs to be securely stored; this could be stored electronically, for example on a computer, outsourced to a third party or more simply written down on paper. However, if the key is compromised by an adversary then the adversary will have access to all of the money that the entity had associated with that. Also, if the signing key is lost, then all of the money associated with that key is also lost and would not be recoverable. This is the reason for it being necessary to securely back up signing keys.
+
+Digital signatures also provide a degree of anonymity within cryptocurrencies; some cryptocurrencies provide more anonymity than others. Essentially, we don’t need to know any details about the entity that is sending or receiving the money, we just need to know the verification key of that entity.
+
+Apart from within digital signatures, hashing, another cryptographic primitive, is featured heavily in the generation of money within many cryptocurrencies. This generation is often referred to as mining, however some cryptocurrencies such as Ripple are not able to be mined. Mining relies on one of the key properties of hash functions, pre-image resistance. Pre-image resistance is able to be explained as, given the output of a hash function, it should be computationally infeasible to find the input; this is because by definition, a hash function should be a one-way function.
+
+In order to generate money, a certain amount of work should be able to be demonstrated. In cryptocurrency, this work is demonstrated by identifying pre-images. Essentially, there are a set of hashes, of which the number of hashes in the set may vary depending on the decided difficulty at the time. If there are less hashes in the set then mining becomes more difficult and vice-versa. A miner must group a number of transactions together, verify each transaction by checking the signature with the verification key of the individual that created the transaction and then hash the transactions together to try and match one of the hashes in the set. If they match, then the set of transactions referred to as a block is added to the block chain. The miner that is successful then receives money for doing the work and the cycle subsequently continues.
+
+The block chain is essentially the central ledger that is used to record all of the verified transactions which are grouped into blocks. Each block in the block chain is linked to the previous block by referring to the hash of the previous block. As the previous hash is included in the latest block and that block is subsequently also hashed the block chains integrity remains. Additionally, as the ledger (block chain) is decentralised and everyone in the network holds, to some extent a copy of it, this ensures that it is always available and is also robust.
+
+Ultimately, the relationship between cryptography and cryptocurrencies are very strong. Cryptocurrency uses several cryptographic primitives; public-key encryption through the use of digital signatures and also hash functions as the fundamental underpinnings of it. In cryptocurrencies, it is the different properties of the cryptographic primitives discussed above which enable it to provide the functions that any currency requires.
