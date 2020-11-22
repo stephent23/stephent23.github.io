@@ -25,6 +25,7 @@ feature_row:
 I am an Information and Cyber Security professional and enthusiast. 
 
 ![image-left](/assets/img/custom/about/about-gallery-3_300px.jpeg){: .align-left}
+
 I am currently a Security Operations Manager focused on building advanced Incident Response, Monitoring and Threat Intelligence capabilities to maximise the effectiveness of defending against an ever-changing threat landscape.
 
 I first entered the world of Information and Cyber Security as part of an industrial placement whilst studying my undergraduate degree in Computing - I haven't looked back since. Since then, I have worked in a number of different industries, primarily working within security operations teams but also having done some work on OT security. 
