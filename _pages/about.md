@@ -55,8 +55,3 @@ I am passionate about education and ensuring that young people are provided with
 Infosecuriosity has been set up as a repository for the research and content that I am curating. It is, at least initially, a bit of a brain dump and thus does (or may) encompass technical, non-technical, theoretical and practical posts.
 
 My goal is to post content that others may find interesting and will hopefully provide some benefit to the wider security community. 
-
-<br />
-
-## Contact
-If you would like to get in touch, please feel free to reach out via <a href="mailto:stephen@sjtate.co.uk?Subject=Infosecuriosity Concern">Email</a> or <a href="https:​/​/​twitter.com/​@sj_tate">Twitter</a>​. 
