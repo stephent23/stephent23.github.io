@@ -24,7 +24,7 @@ feature_row:
 ## Background
 I am an Information and Cyber Security professional and enthusiast. 
 
-![image-left](/assets/img/custom/about/about-gallery-3_300px.jpeg){: .align-left}
+![image-left](/assets/img/custom/about/about-gallery-3_300px.JPG){: .align-left}
 
 I am currently a Security Operations Manager focused on building advanced Incident Response, Monitoring and Threat Intelligence capabilities to maximise the effectiveness of defending against an ever-changing threat landscape.
 
