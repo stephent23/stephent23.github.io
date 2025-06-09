@@ -12,7 +12,7 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "contrast" # "default", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-GB"
@@ -70,7 +70,7 @@ naver_site_verification  :
 
 # Social Sharing
 twitter:
-  username               : "sj_tate"
+  username               :
 facebook:
   username               :
   app_id                 :
@@ -100,13 +100,16 @@ author:
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      #url: "stephen@sjtate.co.uk"
+      #url: ""
     - label: "infosecuriosity.co.uk"
       icon: "fas fa-fw fa-link"
       url: "https://infosecuriosity.co.uk"
-    - label: "@sj_tate"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/sj_tate"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/stephen-tate-74b86555"
+    # - label: ""
+    #   icon: "fab fa-fw fa-twitter-square"
+    #   url: ""
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       # url: "https://facebook.com/"
@@ -117,12 +120,16 @@ author:
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
 
+
 # Site Footer
 footer:
   links:
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/stephen-tate-74b86555"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/sj_tate"
+      #url: 
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       # url:
@@ -270,7 +277,7 @@ defaults:
   # _posts
   - scope:
       path: ""
-      type: post
+      type: posts
     values:
       layout: single
       author_profile: true
@@ -285,7 +292,7 @@ defaults:
       type: pages
     values:
       layout: splash
-      author_profile: false
+      author_profile: true
   # _portfolio
   - scope:
       path: ""
