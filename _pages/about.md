@@ -22,7 +22,7 @@ feature_row:
 ---
 
 # About Stephen Tate
-I am a cybersecurity leader with over a decade of hands-on experience in Security Operations, Incident Response, and Digital Forensics. My work spans multiple critical sectors including Finance, Pharmaceuticals, and Critical National Infrastructure (CNI).
+I'm a cybersecurity leader with over a decade of experience in Security Operations, Incident Response, and Digital Forensics. My work spans multiple sectors including Finance, Pharmaceuticals, and Critical National Infrastructure (CNI).
 
 I specialise in identifying, containing, and remediating cyber threats, and have built and led high-performing teams in high-pressure environments. My approach is rooted in technical rigor, practical experience, and a deep understanding of both adversarial tactics and business risk.
 
