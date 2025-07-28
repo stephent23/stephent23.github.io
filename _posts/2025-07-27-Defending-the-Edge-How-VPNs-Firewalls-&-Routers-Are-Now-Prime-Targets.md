@@ -2,7 +2,7 @@
 type: posts
 title: "Defending the Edge: How VPNs, Firewalls & Routers Are Now Prime Targets"
 tags: [Ransomware, Edge Devices, Cyber Incident, Threat Landscape, Edge Device Security, Zero Trust, VPN Gateway & Firewall Attacks, State Sponsored Cyber Threats]
-category: Ransomware
+category: Zero Trust Architecture
 toc: true
 ---
 
