@@ -8,7 +8,7 @@ toc: true
 
 Security Operations Centres (SOCs) live and breathe questions such as: *What happened? How did it happen? Who is behind it?* But there’s one question that cuts through noise, elevates both analyst effectiveness and organisational resilience, and should sit at the centre of every investigation:  
 
-**“So what?”**  
+***“So what?”***
 
 It might sound simple, even dismissive, but it’s the most powerful question an analyst can ask. When asked consistently, it is also the one which most tangibly reduces risk.  
 
