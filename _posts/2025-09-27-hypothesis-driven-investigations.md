@@ -1,6 +1,6 @@
 ---
 type: posts
-title: "Hypothesis Driven Investigations"
+title: "The Power of Hypothesis Driven Investigations"
 tags: [Cyber Incident Response, SOC, SOC Analyst, Critical Thinking]
 category: Incident Response
 toc: true
