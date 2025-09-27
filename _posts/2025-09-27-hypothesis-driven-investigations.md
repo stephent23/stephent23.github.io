@@ -32,16 +32,14 @@ There are several practical ways analysts can generate useful hypotheses when co
 Start with the alert in front of you and ask:  
 *“If this activity is truly malicious, what other activity should I expect to find?”*
 
-**Example:** A detection fires for suspicious PowerShell usage triggered by an obfuscated command line.
-
-**Hypothesis:** An attacker is using PowerShell to download and execute a payload as part of initial access or post-exploitation.
-
-**Tests:**
-- Review PowerShell script block logs (Event ID 4104) for indicators like `Invoke-WebRequest`, `Invoke-Expression`, or `DownloadString`.
-- Check Event ID 4688 for related process creation (e.g., PowerShell spawning `cmd.exe`, `mshta.exe`, or `rundll32.exe`).
-- Look for outbound network connections to unfamiliar or suspicious domains/IPs, especially over HTTP/S from PowerShell.
-- Correlate with web proxy or DNS logs to validate external communication attempts.
-- Check for follow-on behaviors, such as the creation of suspicious scheduled tasks, services, or persistence mechanisms.
+- **Example:** A detection fires for suspicious PowerShell usage triggered by an obfuscated command line.
+   - **Hypothesis:** An attacker is using PowerShell to download and execute a payload as part of initial access or post-exploitation.
+   - **Tests:**
+      - Review PowerShell script block logs (Event ID 4104) for indicators like `Invoke-WebRequest`, `Invoke-Expression`, or `DownloadString`.
+      - Check Event ID 4688 for related process creation (e.g., PowerShell spawning `cmd.exe`, `mshta.exe`, or `rundll32.exe`).
+      - Look for outbound network connections to unfamiliar or suspicious domains/IPs, especially over HTTP/S from PowerShell.
+      - Correlate with web proxy or DNS logs to validate external communication attempts.
+      - Check for follow-on behaviors, such as the creation of suspicious scheduled tasks, services, or persistence mechanisms.
 
 {:.no_toc}
 ### 2. Threat-Informed Hypotheses  
