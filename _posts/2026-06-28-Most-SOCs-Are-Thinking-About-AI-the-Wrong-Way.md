@@ -1,6 +1,6 @@
 ---
 ## type: posts
-title: “Most SOCs Are Thinking About AI the Wrong Way”
+title: Most SOCs Are Thinking About AI the Wrong Way
 tags: [AI, SOC, Security Operations, Cyber Defence]
 category: Security Operations
 toc: true
