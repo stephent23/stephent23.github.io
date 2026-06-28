@@ -34,7 +34,7 @@ Before going further, it is worth being clear about the different kinds of work 
 
 Automation is not going anywhere; it keeps doing the certain work it has always done well. AI is what lets us take on the variable, reasoning through a situation rather than following a fixed set of steps. What it will not do is handle the novel, and that is why analysts remain critical. They are also what makes the AI and automation effective in the first place.
 
-![The three jobs in the AI-ready SOC: automation handles the certain, AI handles the variable, people handle the novel, along a spectrum from certain to novel.](img/custom/posts/three-jobs-ai-ready-soc.svg)
+![The three jobs in the AI-ready SOC: automation handles the certain, AI handles the variable, people handle the novel, along a spectrum from certain to novel.](/assets/img/custom/posts/three-jobs-ai-ready-soc.svg)
 
 ## Why We Cannot Automate Our Way Out
 
