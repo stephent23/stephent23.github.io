@@ -10,6 +10,8 @@ toc: true
 
 *The real opportunity is not faster alerts. It is scaling the expertise your best people already have.*
 
+![The three jobs in the AI-ready SOC: automation handles the certain, AI handles the variable, people handle the novel, along a spectrum from certain to novel.](/assets/img/custom/posts/three-jobs-ai-ready-soc.svg)
+
 Every vendor has an AI story, every security leader is being asked for an AI strategy, and most of the discussion when it comes to the SOC, circles the same handful of questions. Can AI triage alerts faster? Can it help with investigations? Can it write detections?
 
 Plenty of SOCs will tell you they are already using AI. It might be embedded in the controls they monitor, or analysts might be using prompt features to help understand and document investigations. Useful as that is, it tends to be disjointed, and it addresses a very small part of the SOC problem.
@@ -34,7 +36,6 @@ Before going further, it is worth being clear about the different kinds of work 
 
 Automation is not going anywhere; it keeps doing the certain work it has always done well. AI is what lets us take on the variable, reasoning through a situation rather than following a fixed set of steps. What it will not do is handle the novel, and that is why analysts remain critical. They are also what makes the AI and automation effective in the first place.
 
-![The three jobs in the AI-ready SOC: automation handles the certain, AI handles the variable, people handle the novel, along a spectrum from certain to novel.](/assets/img/custom/posts/three-jobs-ai-ready-soc.svg)
 
 ## Why We Cannot Automate Our Way Out
 
