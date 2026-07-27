@@ -1,0 +1,18 @@
+{% if page.series %}
+  {% assign series_meta = site.data.series[page.series] %}
+  {% assign series_posts = site.posts | where: "series", page.series | sort: "series_part" %}
+  <nav class="series-nav" aria-label="Series navigation">
+    <p class="series-nav__label">Part of <a href="/series/{{ page.series }}/">{{ series_meta.title | default: page.series }}</a></p>
+    <ol class="series-nav__list">
+      {% for post in series_posts %}
+        <li{% if post.url == page.url %} class="series-nav__current" aria-current="true"{% endif %}>
+          {% if post.url == page.url %}
+            Part {{ post.series_part }}: {{ post.title }}
+          {% else %}
+            <a href="{{ post.url | relative_url }}">Part {{ post.series_part }}: {{ post.title }}</a>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ol>
+  </nav>
+{% endif %}

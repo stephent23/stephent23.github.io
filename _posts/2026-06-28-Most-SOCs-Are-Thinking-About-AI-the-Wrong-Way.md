@@ -1,9 +1,15 @@
 ---
-## type: posts
+type: posts
 title: Most SOCs Are Thinking About AI the Wrong Way
+description: "The real AI opportunity in the SOC isn't faster triage — it's codifying your best analysts' expertise so it can be applied at scale. Part 1 of a series."
 tags: [AI, SOC, Security Operations, Cyber Defence]
 category: Security Operations
 toc: true
+series: ai-ready-soc
+series_part: 1
+header:
+  og_image: /assets/img/custom/posts/three-jobs-ai-ready-soc-og.png
+  og_image_alt: "The three jobs in the AI-ready SOC: automation handles the certain, AI handles the variable, people handle the novel, along a spectrum from certain to novel."
 ---
 
 *Part 1 of Building the AI-Ready SOC series*

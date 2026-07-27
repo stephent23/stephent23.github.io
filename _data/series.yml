@@ -1,0 +1,9 @@
+ai-ready-soc:
+  title: "Building the AI-Ready SOC"
+  argument: >
+    Most SOCs are treating AI as a way to work through alerts faster, when the real
+    opportunity is turning your best analysts' expertise into something that can be
+    applied everywhere, not only when they're on shift. This series works through what
+    that actually takes — codifying investigative judgement, building the schemas that
+    make it usable, and rethinking what the analyst role becomes once expertise scales
+    past any one person.
