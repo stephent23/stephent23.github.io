@@ -3,5 +3,7 @@ main:
     url: /
   - title: "Categories"
     url: /categories/
+  - title: "Tools"
+    url: /tools/
   - title: "About"
     url: /about/

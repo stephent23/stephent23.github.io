@@ -1,0 +1,8 @@
+- name: "CVE Analyser"
+  url: "https://cve-analyser.infosecuriosity.co.uk"
+  description: >
+    Raw CVE disclosure counts make headlines but tell you very little on their own —
+    a vendor publishing more CVEs can mean worse security, or it can mean a more mature
+    disclosure process. CVE Analyser looks past the count to what actually matters:
+    severity, exploitation status, and how a vendor's numbers move over time, so you can
+    tell the difference between noise and a genuine trend.
