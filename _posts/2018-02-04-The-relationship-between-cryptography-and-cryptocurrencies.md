@@ -1,6 +1,7 @@
 ---
 type: posts
 title: The Relationship Between Cryptography and Cryptocurrencies
+description: "How digital signatures and public-key cryptography secure cryptocurrency transactions, and what happens if a signing key is lost or stolen."
 tags: [Cryptography, Cryptocurrency, Blockchain, Digital Signatures]
 category: Cryptography
 classes: wide

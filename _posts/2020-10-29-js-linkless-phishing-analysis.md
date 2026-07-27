@@ -1,6 +1,7 @@
 ---
 type: posts
 title: Defending against Obfuscation and Link-less Phishing
+description: "Anatomy of a link-less HTML-attachment phishing campaign — the JavaScript obfuscation used to evade analysis, and how defenders can still catch it."
 tags: [Phishing, Phishing Kits, Obfuscation, JavaScript, Defense Evasion]
 category: Phishing
 toc: true

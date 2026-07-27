@@ -1,6 +1,7 @@
 ---
 type: posts
 title: Is Cybercrime a Global Phenomenon That Is Not Restricted by Geographical Boundaries?
+description: "Why cybercrime shrugs off the geographical and jurisdictional boundaries that traditional crime has always been bound by."
 tags: [Cybercrime, Computer Misuse, Internet Globalisation]
 category: Cybercrime
 classes: wide

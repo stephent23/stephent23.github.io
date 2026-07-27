@@ -1,6 +1,7 @@
 ---
 type: posts
 title: Why the 3 Digits on the Back of Your Credit or Debit Card Matter
+description: "What your card's CVV actually protects against in card-not-present fraud, and why merchants are legally barred from storing it."
 tags: [Cryptography, Online Shopping, CNP, Credit Card, Money, Security, DES, CVV, Debit Card]
 category: Cryptography
 classes: wide

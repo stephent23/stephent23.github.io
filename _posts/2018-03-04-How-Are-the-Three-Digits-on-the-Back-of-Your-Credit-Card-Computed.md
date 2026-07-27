@@ -1,6 +1,7 @@
 ---
 type: posts
 title: How Are the Three Digits on the Back of Your Credit Card Computed?
+description: "The 2-key Triple DES algorithm behind your card's CVV, and the inputs — PAN, expiry date, service code — that go into computing it."
 tags: [Cryptography, Online Shopping, CNP, Credit Card, Money, Security, DES, CVV, Debit Card]
 category: Cryptography
 classes: wide

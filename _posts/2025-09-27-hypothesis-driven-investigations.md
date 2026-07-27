@@ -1,6 +1,7 @@
 ---
 type: posts
 title: "The Power of Hypothesis Driven Investigations"
+description: "Why structured hypotheses, not more tooling, are what turns SOC alert-chasing into evidence-based investigation."
 tags: [Cyber Incident Response, SOC, SOC Analyst, Critical Thinking]
 category: Incident Response
 toc: true

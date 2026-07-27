@@ -1,6 +1,7 @@
 ---
 type: posts
 title: "The Most Important Question Every SOC Analyst Should Be Asking"
+description: "The one question — 'so what?' — that separates analysts closing alerts fast from analysts actually reducing risk."
 tags: [Cyber Incident Response, SOC, SOC Analyst, Critical Thinking]
 category: Incident Response
 toc: true

@@ -1,6 +1,7 @@
 ---
 type: posts
 title: Simple Steps to Good Password Management
+description: "Practical, non-obvious habits for stronger passwords — prompted by World Password Day, still relevant every other day of the year."
 tags: [Passwords, Online Shopping, Online Safety, World Password Day, Security, Password Manager]
 category: Passwords
 toc: true

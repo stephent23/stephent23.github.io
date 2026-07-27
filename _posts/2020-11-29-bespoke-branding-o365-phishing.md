@@ -1,6 +1,7 @@
 ---
 type: posts
 title: Use of Bespoke Branding in O365 Phishing Campaigns 
+description: "How phishing kits abuse Microsoft 365's public branding APIs to clone an organisation's real sign-in page convincingly."
 tags: [Phishing, Phishing Kits, Obfuscation, JavaScript, Defense Evasion]
 category: Phishing
 toc: true

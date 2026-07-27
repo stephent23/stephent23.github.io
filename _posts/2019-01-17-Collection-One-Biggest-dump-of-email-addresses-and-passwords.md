@@ -1,6 +1,7 @@
 ---
 type: posts
 title: Collection 1 - What should you do? 
+description: "What the 1.1-billion-record Collection #1 breach actually means for you, how to check if you're in it, and why resetting 'the' password isn't the answer."
 tags: [Passwords, Breaches, Compromise, Identity]
 category: Breaches
 toc: true
