@@ -6,11 +6,273 @@
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+@import "infosec-fonts"; // self-hosted @font-face declarations
 
 
+/* ==========================================================================
+   2.1 Tokens
+
+   The palette is set as Sass variables in the skin (so the theme's own partials
+   pick it up) and mirrored here as custom properties for rules written in plain
+   CSS. Keep the two in step.
+   ========================================================================== */
+
+:root {
+  --paper: #fafafa;
+  --paper-alt: #f2f3f1;
+  --ink: #16181d;
+  --rule: #dcdee1;
+  --muted: #5f646e;
+  --accent: #96262b;
+
+  --serif: #{$serif};
+  --sans: #{$sans-serif};
+  --mono: #{$monospace};
+
+  /* Light only. Declared so browsers and mobile readers don't force-invert the
+     page into a synthetic dark theme. There is no dark mode toggle. */
+  color-scheme: light;
+}
+
+
+/* ==========================================================================
+   2.2 Type
+
+   Body is Newsreader at 19px/1.65. Headings, navigation, metadata and UI are
+   IBM Plex Sans. Plex Mono is reserved for code and never used decoratively.
+
+   Small UI sizes are set in px rather than rem: the theme scales the root font
+   size across breakpoints, so a rem here would mean something different at
+   every width.
+   ========================================================================== */
+
+body {
+  font-family: var(--serif);
+  line-height: 1.65;
+  font-optical-sizing: auto;
+}
+
+.page__content {
+  p,
+  li,
+  dl {
+    line-height: 1.65;
+  }
+}
+
+/* h1 - light-weight serif at large size reads editorial; bold reads blog. */
+.page__title,
+.page__content h1,
+h1.page__title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(36px, 5vw, 52px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+/* h2 - Plex Sans small caps with a hairline above and generous space before.
+   This rhythm against the serif body is what stops the page reading as a
+   default theme. Replaces the theme's own underlined h2. */
+.page__content h2 {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink);
+  border-top: 1px solid var(--rule);
+  border-bottom: 0;
+  padding-top: 1rem;
+  padding-bottom: 0;
+  margin: 3.25rem 0 1.25rem;
+}
+
+.page__content {
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--sans);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Code and query blocks only. */
+code,
+kbd,
+pre,
+samp,
+tt,
+.highlight,
+div.highlighter-rouge,
+figure.highlight {
+  font-family: var(--mono);
+}
+
+/* Navigation, metadata, captions and controls stay in Plex Sans - the serif is
+   for reading, not for chrome. */
+.masthead,
+.greedy-nav,
+.greedy-nav__toggle,
+.page__meta,
+.page__date,
+.page__taxonomy,
+.page__share,
+.page__footer,
+.page__footer-disclaimer,
+.pagination,
+.breadcrumbs,
+.toc,
+.nav__title,
+.nav__list,
+.author__name,
+.author__bio,
+.author__urls,
+.archive__item-excerpt,
+.btn,
+.search__toggle,
+.notice,
+figcaption,
+.page__hero-caption {
+  font-family: var(--sans);
+}
+
+
+/* ==========================================================================
+   2.3 Link treatment
+
+   Links carry no colour of their own: ink text with a rule-coloured underline
+   that turns claret on hover. Navigation and metadata links are not underlined
+   at all - they shift from muted to ink. No blue anywhere on the site.
+   ========================================================================== */
+
+.page__content a,
+.archive__item-excerpt a,
+.notice a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--rule);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+  transition: text-decoration-color 0.15s ease;
+
+  &:visited {
+    color: var(--ink);
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--ink);
+    text-decoration-color: var(--accent);
+  }
+}
+
+/* Chrome links: no underline, muted until hovered. */
+.masthead a,
+.greedy-nav a,
+.page__meta a,
+.page__taxonomy a,
+.page__footer a,
+.page__footer-disclaimer a,
+.pagination a,
+.breadcrumbs a,
+.toc a,
+.author__urls a,
+.archive__item-title a {
+  color: var(--muted);
+  text-decoration: none;
+
+  &:visited {
+    color: var(--muted);
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--ink);
+    text-decoration: none;
+  }
+}
+
+/* The site title and post titles are ink already, not muted. */
+.masthead .site-title,
+.archive__item-title a,
+.page__title a {
+  color: var(--ink);
+
+  &:visited {
+    color: var(--ink);
+  }
+}
+
+/* Post titles in listings are content, not chrome - same editorial serif as the
+   h1 they lead to. */
+.archive__item-title {
+  font-family: var(--serif);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* Social icons keep their brand colours. The "no blue" rule in 2.3 is about
+   link colour, not wayfinding icons - LinkedIn blue and the GitHub mark are
+   recognised at a glance and occupy a few pixels each. */
+
+/* The theme fills .nav__title with $primary-color, which turns the table of
+   contents header into a solid claret block - far and away the loudest thing on
+   the page, and well past the 2% budget for the accent. Reduced to a quiet
+   label; the accent stays for the rules that earn it. */
+.sidebar .nav__title,
+.toc .nav__title {
+  background: var(--paper-alt);
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  border-bottom: 1px solid var(--rule);
+}
+
+.toc {
+  border: 1px solid var(--rule);
+
+  .toc__menu a {
+    font-family: var(--sans);
+    font-size: 12px;
+    color: var(--muted);
+
+    &:hover {
+      color: var(--ink);
+    }
+  }
+}
+
+/* Visible keyboard focus on everything interactive. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+
+/* ==========================================================================
+   Site furniture
+   ========================================================================== */
 
 .page__footer-disclaimer {
-  text-align: justify;	
+  text-align: justify;
 
   ul {
     margin: 0;
@@ -20,7 +282,7 @@
 
   li {
     display: inline-block;
-    font-family: $global-font-family;
+    font-family: var(--sans);
     font-size: $type-size-7;
   }
 
@@ -30,18 +292,17 @@
   }
 
   .align-right-link {
-  	float: right;
+    float: right;
   }
 
   a {
     padding-right: 10px;
     text-decoration: underline;
   }
-
 }
 
 .page__lead {
-  font-family: $global-font-family;
+  font-family: var(--sans);
   font-size: $type-size-8;
 }
 
@@ -52,7 +313,6 @@
   text-align: justify !important;
   text-justify: inter-word !important;
 }
-
 
 .mermaid-container {
   display: flex;
@@ -72,96 +332,102 @@
    Kit's stock embed ships ~15KB of inline CSS and a 700px two-column card.
    _includes/subscribe.html keeps only the markup their JS binds to; the
    styling lives here so it can follow the site rather than the vendor.
-   ========================================================================== */
 
-/* Minimal Mistakes floats .page__content (float: left; width: 100%) inside
+   Minimal Mistakes floats .page__content (float: left; width: 100%) inside
    .page__inner-wrap, which is why the theme's own .page__meta and .page__share
    both set clear: both. Anything inserted alongside them has to do the same:
    without it the box starts at the top of the article while its text is pushed
-   below the float, so the border ends up drawn down the whole post. */
+   below the float, so the border ends up drawn down the whole post.
+   ========================================================================== */
+
 .subscribe {
   clear: both;
-  margin: 3em 0;
-  padding: 1.25em 1.5em;
-  border: 1px solid $border-color;
-  border-left: 3px solid $primary-color;
-  border-radius: $border-radius;
-  font-family: $global-font-family;
+  margin: 4rem 0 0;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--sans);
 }
 
 .subscribe__heading {
-  margin: 0 0 0.35em;
-  font-size: $type-size-5;
-  line-height: 1.3;
+  margin: 0 0 0.5rem;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent);
 }
 
 .subscribe__copy {
-  margin: 0 0 1em;
-  font-size: $type-size-6;
-  line-height: 1.5;
-  color: $muted-text-color;
+  margin: 0 0 1.25rem;
+  max-width: 28rem;
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--ink);
 }
 
 .subscribe__fields {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5em;
+  gap: 0.5rem;
 }
 
 .subscribe__input {
-  flex: 1 1 14em;
+  flex: 1 1 16rem;
   min-width: 0;
-  padding: 0.6em 0.75em;
-  border: 1px solid $border-color;
-  border-radius: $border-radius;
-  font-family: $global-font-family;
-  font-size: $type-size-6;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--rule);
+  background: #fff;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 14px;
   line-height: 1.4;
 
   &:focus {
-    outline: 2px solid $primary-color;
+    outline: 2px solid var(--accent);
     outline-offset: 1px;
   }
 }
 
 .subscribe__submit {
   flex: 0 0 auto;
-  padding: 0.6em 1.4em;
-  border: 0;
-  border-radius: $border-radius;
-  background-color: $primary-color;
-  color: #fff;
-  font-family: $global-font-family;
-  font-size: $type-size-6;
-  font-weight: bold;
-  line-height: 1.4;
+  padding: 0.7rem 1.4rem;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
   cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
 
   &:hover,
   &:focus {
-    opacity: 0.9;
+    background: var(--accent);
+    border-color: var(--accent);
   }
 }
 
 .subscribe__note {
-  margin: 0.75em 0 0;
-  font-size: $type-size-7;
-  color: $muted-text-color;
+  margin: 0.75rem 0 0;
+  font-size: 11px;
+  color: var(--muted);
 }
 
 .subscribe__errors {
-  margin: 0 0 0.75em;
+  margin: 0 0 0.75rem;
   padding: 0;
   list-style: none;
-  font-size: $type-size-7;
-  color: $danger-color;
+  font-size: 12px;
+  color: var(--accent);
 
   &:empty {
     display: none;
   }
 }
 
-/* Kit's JS toggles this while a submission is in flight. */
 .subscribe .formkit-spinner {
   display: none;
 }
@@ -169,36 +435,35 @@
 
 /* ==========================================================================
    Series
+   Same float-clearing requirement as .subscribe above.
    ========================================================================== */
 
-/* Same float-clearing requirement as .subscribe above. */
 .series-nav {
   clear: both;
-  margin: 3em 0 0;
-  padding: 1.25em 1.5em;
-  border: 1px solid $border-color;
-  border-radius: $border-radius;
-  font-family: $global-font-family;
+  margin: 3.5rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--sans);
 }
 
 .series-nav__label {
-  margin: 0 0 0.6em;
-  font-size: $type-size-7;
+  margin: 0 0 0.75rem;
+  font-size: 10px;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: $muted-text-color;
+  letter-spacing: 0.14em;
+  color: var(--muted);
 }
 
 .series-nav__list {
   margin: 0;
   padding: 0;
   list-style: none;
-  counter-reset: none;
 }
 
 .series-nav__item {
-  margin: 0 0 0.4em;
-  font-size: $type-size-6;
+  margin: 0 0 0.5rem;
+  font-size: 14px;
   line-height: 1.4;
 
   &:last-child {
@@ -209,57 +474,79 @@
 .series-nav__part {
   display: inline-block;
   min-width: 4.5em;
-  font-size: $type-size-7;
-  color: $muted-text-color;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
 }
 
-.series-nav__item--current .series-nav__title {
-  font-weight: bold;
-}
+.series-nav__item--current {
+  color: var(--ink);
 
-.series-landing__argument {
-  font-size: $type-size-5;
-  line-height: 1.6;
-  color: $muted-text-color;
-}
+  .series-nav__part {
+    color: var(--accent);
+  }
 
-.series-landing__list {
-  margin: 2em 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.series-landing__item {
-  margin: 0 0 2em;
-  padding: 0 0 2em;
-  border-bottom: 1px solid $border-color;
-
-  &:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: 0;
+  .series-nav__title {
+    font-weight: 600;
   }
 }
 
-.series-landing__part {
-  margin: 0 0 0.2em;
-  font-family: $global-font-family;
-  font-size: $type-size-7;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: $muted-text-color;
-}
+/* Scoped under .page__content: the theme styles content elements with
+   `.page__content p` / `.page__content h2` (specificity 0,1,1), which would
+   otherwise outrank a bare component class (0,1,0) and drag these back to the
+   body and section-heading treatments. */
+.page__content {
+  .series-landing__argument {
+    font-family: var(--serif);
+    font-size: 21px;
+    line-height: 1.55;
+    color: var(--ink);
+  }
 
-.series-landing__title {
-  margin: 0 0 0.4em;
-  font-size: $type-size-4;
-  line-height: 1.3;
-}
+  .series-landing__list {
+    margin: 2.5rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
 
-.series-landing__description {
-  margin: 0;
-  line-height: 1.6;
-  color: $muted-text-color;
+  .series-landing__item {
+    margin: 0 0 2rem;
+    padding: 0 0 2rem;
+    border-bottom: 1px solid var(--rule);
+
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+
+  .series-landing__part {
+    margin: 0 0 0.3rem;
+    font-family: var(--mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+  }
+
+  .series-landing__title {
+    margin: 0 0 0.5rem;
+    padding: 0;
+    border: 0;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 1.2;
+    text-transform: none;
+    letter-spacing: -0.01em;
+  }
+
+  .series-landing__description {
+    margin: 0;
+    line-height: 1.6;
+    color: var(--muted);
+  }
 }
 
 
@@ -267,37 +554,46 @@
    Tools
    ========================================================================== */
 
-.tools-list {
-  margin: 2em 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.tools-list__item {
-  margin: 0 0 2em;
-  padding: 0 0 2em;
-  border-bottom: 1px solid $border-color;
-
-  &:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: 0;
+/* Scoped for the same specificity reason as the series list above. */
+.page__content {
+  .tools-list {
+    margin: 2.5rem 0 0;
+    padding: 0;
+    list-style: none;
   }
-}
 
-.tools-list__name {
-  margin: 0 0 0.4em;
-  font-size: $type-size-4;
-  line-height: 1.3;
-}
+  .tools-list__item {
+    margin: 0 0 2rem;
+    padding: 0 0 2rem;
+    border-bottom: 1px solid var(--rule);
 
-.tools-list__description {
-  margin: 0 0 0.75em;
-  line-height: 1.6;
-}
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
 
-.tools-list__cta {
-  margin: 0;
-  font-family: $global-font-family;
-  font-size: $type-size-6;
+  .tools-list__name {
+    margin: 0 0 0.5rem;
+    padding: 0;
+    border: 0;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 1.2;
+    text-transform: none;
+    letter-spacing: -0.01em;
+  }
+
+  .tools-list__description {
+    margin: 0 0 0.75rem;
+    line-height: 1.6;
+  }
+
+  .tools-list__cta {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: 14px;
+  }
 }
