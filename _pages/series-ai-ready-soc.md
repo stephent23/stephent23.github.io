@@ -21,4 +21,4 @@ permalink: /series/ai-ready-soc/
   {% endfor %}
 </ol>
 
-{% include subscribe.html copy="The next part covers how expertise actually gets captured. Sent when it publishes, nothing else." %}
+{% if site.subscribe_enabled %}{% include subscribe.html copy="The next part covers how expertise actually gets captured. Sent when it publishes, nothing else." %}{% endif %}

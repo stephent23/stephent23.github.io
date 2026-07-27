@@ -55,7 +55,7 @@ layout: default
 
       {% if page.id %}
         {% include series-nav.html %}
-        {% include subscribe.html %}
+        {% if site.subscribe_enabled %}{% include subscribe.html %}{% endif %}
       {% endif %}
 
       <footer class="page__meta">

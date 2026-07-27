@@ -90,6 +90,10 @@ social:
 analytics:
   provider               : false
 
+# Email capture (Kit). Set to true once the Kit form is configured on the
+# backend; _includes/subscribe.html is ready and needs no other changes.
+subscribe_enabled        : false
+
 
 # Site Author
 author:
