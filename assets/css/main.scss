@@ -71,27 +71,45 @@ h1.page__title {
   letter-spacing: -0.025em;
 }
 
-/* h2 - small caps with a hairline above and generous space before. With one
-   family doing all the work, the section headings are separated from the body
-   by case, tracking and the rule rather than by a change of typeface. This is
-   what stops the page reading as a default theme. Replaces the theme's own
-   underlined h2. */
+/* h2 - section headings.
+
+   These were originally small caps at 13px, which worked when the body was a
+   serif: the change of typeface did the separating. With one family doing all
+   the work a 13px heading is *smaller* than the 18px body, so it receded
+   instead of announcing, and uppercase is slower to read at a glance - the
+   combination made posts hard to scan, especially on desktop where the root
+   size steps up and the measure is longer.
+
+   Now sentence case and clearly larger than the body, with the hairline rule
+   kept as the structural device. The small-caps treatment moves to labels and
+   eyebrows further down, where being small is the point. */
 .page__content h2 {
   font-family: var(--sans);
-  font-size: 13px;
+  font-size: 21px;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
+  text-transform: none;
+  letter-spacing: -0.015em;
+  line-height: 1.3;
   color: var(--ink);
   border-top: 1px solid var(--rule);
   border-bottom: 0;
-  padding-top: 1rem;
+  padding-top: 1.1rem;
   padding-bottom: 0;
-  margin: 3.25rem 0 1.25rem;
+  margin: 3.25rem 0 1.1rem;
+}
+
+/* h3 - a clear step down from h2, no rule, so the two levels are never
+   confused when scanning. */
+.page__content h3 {
+  font-family: var(--sans);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  margin: 2.25rem 0 0.75rem;
 }
 
 .page__content {
-  h3,
   h4,
   h5,
   h6 {
@@ -192,12 +210,76 @@ figure.highlight {
   }
 }
 
-/* Post titles in listings are content, not chrome - carry the same weight and
-   tracking as the h1 they lead to, a step down in size. */
+/* ==========================================================================
+   Listings (home, categories, tags)
+
+   The old listing was a soft wall: a generic "Recent Posts" rule, no separation
+   between entries, the date sitting between headline and summary, and a summary
+   that was the body text truncated mid-thought. Reworked so a listing can be
+   scanned - subject, then headline, then what it argues, then how long it takes.
+   ========================================================================== */
+
+/* Section label. This is the small-caps treatment retired from h2 above, put
+   where being small and quiet is the point. */
+.archive__subtitle {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  border-bottom: 0;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+
+.list__item {
+  padding-bottom: 1.75rem;
+  margin-bottom: 1.75rem;
+  border-bottom: 1px solid var(--rule);
+
+  &:last-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+/* Category, in claret. Small enough to stay inside the accent budget. */
+.archive__item-eyebrow {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin: 0 0 0.4rem;
+}
+
+/* Post titles in listings are content, not chrome - same weight and tracking as
+   the h1 they lead to, a step down in size. */
 .archive__item-title {
   font-family: var(--sans);
+  font-size: 26px;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  line-height: 1.2;
+  letter-spacing: -0.028em;
+  margin: 0 0 0.5rem;
+}
+
+.archive__item-excerpt {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0 0 0.6rem;
+}
+
+/* Date and read time are useful once a headline has caught your eye, not
+   before it - demoted below the summary. */
+.archive__item .page__meta {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
 }
 
 /* Social icons keep their brand colours. The "no blue" rule in 2.3 is about
