@@ -65,3 +65,231 @@
   border: none;
   padding: 0;
 }
+
+
+/* ==========================================================================
+   Email capture (Kit)
+   Kit's stock embed ships ~15KB of inline CSS and a 700px two-column card.
+   _includes/subscribe.html keeps only the markup their JS binds to; the
+   styling lives here so it can follow the site rather than the vendor.
+   ========================================================================== */
+
+.subscribe {
+  margin: 3em 0;
+  padding: 1.25em 1.5em;
+  border: 1px solid $border-color;
+  border-left: 3px solid $primary-color;
+  border-radius: $border-radius;
+  font-family: $global-font-family;
+}
+
+.subscribe__heading {
+  margin: 0 0 0.35em;
+  font-size: $type-size-5;
+  line-height: 1.3;
+}
+
+.subscribe__copy {
+  margin: 0 0 1em;
+  font-size: $type-size-6;
+  line-height: 1.5;
+  color: $muted-text-color;
+}
+
+.subscribe__fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.subscribe__input {
+  flex: 1 1 14em;
+  min-width: 0;
+  padding: 0.6em 0.75em;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  font-family: $global-font-family;
+  font-size: $type-size-6;
+  line-height: 1.4;
+
+  &:focus {
+    outline: 2px solid $primary-color;
+    outline-offset: 1px;
+  }
+}
+
+.subscribe__submit {
+  flex: 0 0 auto;
+  padding: 0.6em 1.4em;
+  border: 0;
+  border-radius: $border-radius;
+  background-color: $primary-color;
+  color: #fff;
+  font-family: $global-font-family;
+  font-size: $type-size-6;
+  font-weight: bold;
+  line-height: 1.4;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    opacity: 0.9;
+  }
+}
+
+.subscribe__note {
+  margin: 0.75em 0 0;
+  font-size: $type-size-7;
+  color: $muted-text-color;
+}
+
+.subscribe__errors {
+  margin: 0 0 0.75em;
+  padding: 0;
+  list-style: none;
+  font-size: $type-size-7;
+  color: $danger-color;
+
+  &:empty {
+    display: none;
+  }
+}
+
+/* Kit's JS toggles this while a submission is in flight. */
+.subscribe .formkit-spinner {
+  display: none;
+}
+
+
+/* ==========================================================================
+   Series
+   ========================================================================== */
+
+.series-nav {
+  margin: 3em 0 0;
+  padding: 1.25em 1.5em;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  font-family: $global-font-family;
+}
+
+.series-nav__label {
+  margin: 0 0 0.6em;
+  font-size: $type-size-7;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: $muted-text-color;
+}
+
+.series-nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: none;
+}
+
+.series-nav__item {
+  margin: 0 0 0.4em;
+  font-size: $type-size-6;
+  line-height: 1.4;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.series-nav__part {
+  display: inline-block;
+  min-width: 4.5em;
+  font-size: $type-size-7;
+  color: $muted-text-color;
+}
+
+.series-nav__item--current .series-nav__title {
+  font-weight: bold;
+}
+
+.series-landing__argument {
+  font-size: $type-size-5;
+  line-height: 1.6;
+  color: $muted-text-color;
+}
+
+.series-landing__list {
+  margin: 2em 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.series-landing__item {
+  margin: 0 0 2em;
+  padding: 0 0 2em;
+  border-bottom: 1px solid $border-color;
+
+  &:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+}
+
+.series-landing__part {
+  margin: 0 0 0.2em;
+  font-family: $global-font-family;
+  font-size: $type-size-7;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: $muted-text-color;
+}
+
+.series-landing__title {
+  margin: 0 0 0.4em;
+  font-size: $type-size-4;
+  line-height: 1.3;
+}
+
+.series-landing__description {
+  margin: 0;
+  line-height: 1.6;
+  color: $muted-text-color;
+}
+
+
+/* ==========================================================================
+   Tools
+   ========================================================================== */
+
+.tools-list {
+  margin: 2em 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tools-list__item {
+  margin: 0 0 2em;
+  padding: 0 0 2em;
+  border-bottom: 1px solid $border-color;
+
+  &:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+}
+
+.tools-list__name {
+  margin: 0 0 0.4em;
+  font-size: $type-size-4;
+  line-height: 1.3;
+}
+
+.tools-list__description {
+  margin: 0 0 0.75em;
+  line-height: 1.6;
+}
+
+.tools-list__cta {
+  margin: 0;
+  font-family: $global-font-family;
+  font-size: $type-size-6;
+}
