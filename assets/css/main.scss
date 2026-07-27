@@ -74,7 +74,13 @@
    styling lives here so it can follow the site rather than the vendor.
    ========================================================================== */
 
+/* Minimal Mistakes floats .page__content (float: left; width: 100%) inside
+   .page__inner-wrap, which is why the theme's own .page__meta and .page__share
+   both set clear: both. Anything inserted alongside them has to do the same:
+   without it the box starts at the top of the article while its text is pushed
+   below the float, so the border ends up drawn down the whole post. */
 .subscribe {
+  clear: both;
   margin: 3em 0;
   padding: 1.25em 1.5em;
   border: 1px solid $border-color;
@@ -165,7 +171,9 @@
    Series
    ========================================================================== */
 
+/* Same float-clearing requirement as .subscribe above. */
 .series-nav {
+  clear: both;
   margin: 3em 0 0;
   padding: 1.25em 1.5em;
   border: 1px solid $border-color;
