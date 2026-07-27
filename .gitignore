@@ -3,3 +3,8 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 .DS_Store
+Thumbs.db
+.claude/
+.bundle/
+vendor/bundle/
+CLAUDE.md
