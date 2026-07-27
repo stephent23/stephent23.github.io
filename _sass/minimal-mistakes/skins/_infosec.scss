@@ -1,0 +1,87 @@
+/* ==========================================================================
+   infosecuriosity skin
+
+   Loaded before the theme partials, so these values win over Minimal Mistakes'
+   own `!default` declarations rather than fighting them later in the cascade.
+   Colour tokens are mirrored as CSS custom properties in assets/css/main.scss
+   for the rules that are written in plain CSS.
+   ========================================================================== */
+
+/* Palette
+   --------------------------------------------------------------------------
+   paper     #FAFAFA  page background
+   paper-alt #F2F3F1  asides, subtle blocks
+   ink       #16181D  body text
+   rule      #DCDEE1  hairlines, dividers, link underlines
+   muted     #5F646E  metadata, captions
+   accent    #96262B  claret - max 2% of surface area
+   -------------------------------------------------------------------------- */
+
+$paper: #fafafa !default;
+$paper-alt: #f2f3f1 !default;
+$ink: #16181d !default;
+$rule: #dcdee1 !default;
+$muted: #5f646e !default;
+$accent: #96262b !default;
+
+/* Map the palette onto the variables the theme actually reads. */
+$background-color: $paper !default;
+$text-color: $ink !default;
+$muted-text-color: $muted !default;
+$border-color: $rule !default;
+$primary-color: $accent !default;
+$focus-color: $accent !default;
+
+$code-background-color: $paper-alt !default;
+$form-background-color: $paper-alt !default;
+$footer-background-color: $paper-alt !default;
+
+/* Links carry no colour of their own - they are ink with a rule underline, and
+   the underline turns claret on hover (see 2.3 in assets/css/main.scss). The
+   theme still needs these set so nothing falls back to its default blue. */
+$link-color: $ink !default;
+$link-color-hover: $ink !default;
+$link-color-visited: $ink !default;
+$masthead-link-color: $ink !default;
+$masthead-link-color-hover: $ink !default;
+$navicon-link-color-hover: $muted !default;
+
+/* Typography
+   Body is Newsreader; headings, navigation, metadata and UI are IBM Plex Sans;
+   Plex Mono is reserved for code. Georgia/system stacks are the fallbacks the
+   browser paints during swap. */
+$serif: "Newsreader", Georgia, "Times New Roman", serif !default;
+$sans-serif: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto,
+  sans-serif !default;
+$monospace: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace !default;
+
+$global-font-family: $serif !default;
+$header-font-family: $sans-serif !default;
+$caption-font-family: $sans-serif !default;
+
+/* Body settles at 19px on desktop, per the type spec. The theme derives its
+   medium/large/x-large steps from $doc-font-size by multiplying, which would
+   overshoot to 26px, so all four steps are pinned explicitly. */
+$doc-font-size: 17px !default;
+$doc-font-size-medium: 18px !default;
+$doc-font-size-large: 19px !default;
+$doc-font-size-x-large: 19px !default;
+
+/* Syntax highlighting - a light base16 that sits on $paper-alt rather than the
+   theme's default dark slab, which would be the loudest thing on the page. */
+$base00: #16181d !default;
+$base01: #2a2d34 !default;
+$base02: #dcdee1 !default;
+$base03: #5f646e !default;
+$base04: #6b7079 !default;
+$base05: #16181d !default;
+$base06: #f2f3f1 !default;
+$base07: #fafafa !default;
+$base08: #96262b !default;
+$base09: #7a4a1e !default;
+$base0a: #6b5d1b !default;
+$base0b: #2f5d3a !default;
+$base0c: #1f5960 !default;
+$base0d: #24506b !default;
+$base0e: #5a3a6b !default;
+$base0f: #7a3b2e !default;
