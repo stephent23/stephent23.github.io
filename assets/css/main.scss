@@ -25,7 +25,6 @@
   --muted: #5f646e;
   --accent: #96262b;
 
-  --serif: #{$serif};
   --sans: #{$sans-serif};
   --mono: #{$monospace};
 
@@ -38,8 +37,9 @@
 /* ==========================================================================
    2.2 Type
 
-   Body is Newsreader at 19px/1.65. Headings, navigation, metadata and UI are
-   IBM Plex Sans. Plex Mono is reserved for code and never used decoratively.
+   IBM Plex Sans throughout at 18px/1.7, with Plex Mono reserved for code and
+   never used decoratively. A sans wants a slightly smaller size and more
+   leading than a serif at the same optical size, hence 18/1.7.
 
    Small UI sizes are set in px rather than rem: the theme scales the root font
    size across breakpoints, so a rem here would mean something different at
@@ -47,33 +47,35 @@
    ========================================================================== */
 
 body {
-  font-family: var(--serif);
-  line-height: 1.65;
-  font-optical-sizing: auto;
+  font-family: var(--sans);
+  line-height: 1.7;
 }
 
 .page__content {
   p,
   li,
   dl {
-    line-height: 1.65;
+    line-height: 1.7;
   }
 }
 
-/* h1 - light-weight serif at large size reads editorial; bold reads blog. */
+/* h1 - with no serif to carry the editorial weight, the title leans on size and
+   a tight negative tracking instead. */
 .page__title,
 .page__content h1,
 h1.page__title {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(36px, 5vw, 52px);
-  line-height: 1.08;
-  letter-spacing: -0.02em;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: clamp(34px, 4.5vw, 46px);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
 }
 
-/* h2 - Plex Sans small caps with a hairline above and generous space before.
-   This rhythm against the serif body is what stops the page reading as a
-   default theme. Replaces the theme's own underlined h2. */
+/* h2 - small caps with a hairline above and generous space before. With one
+   family doing all the work, the section headings are separated from the body
+   by case, tracking and the rule rather than by a change of typeface. This is
+   what stops the page reading as a default theme. Replaces the theme's own
+   underlined h2. */
 .page__content h2 {
   font-family: var(--sans);
   font-size: 13px;
@@ -111,32 +113,16 @@ figure.highlight {
   font-family: var(--mono);
 }
 
-/* Navigation, metadata, captions and controls stay in Plex Sans - the serif is
-   for reading, not for chrome. */
-.masthead,
-.greedy-nav,
-.greedy-nav__toggle,
-.page__meta,
-.page__date,
-.page__taxonomy,
-.page__share,
-.page__footer,
-.page__footer-disclaimer,
-.pagination,
-.breadcrumbs,
-.toc,
-.nav__title,
-.nav__list,
-.author__name,
-.author__bio,
-.author__urls,
-.archive__item-excerpt,
-.btn,
-.search__toggle,
-.notice,
-figcaption,
-.page__hero-caption {
-  font-family: var(--sans);
+/* Wordmark: a claret full stop after the site title. Done with a pseudo-element
+   so the masthead markup and site.title stay clean - the dot is decoration, not
+   part of the name. */
+.masthead .site-title::after {
+  content: ".";
+  color: var(--accent);
+  /* The theme renders the title on its own indented line inside the anchor, so
+     the text node carries trailing whitespace. Pull the dot back onto the word
+     by roughly the width of a space. */
+  margin-left: -0.28em;
 }
 
 
@@ -206,12 +192,12 @@ figcaption,
   }
 }
 
-/* Post titles in listings are content, not chrome - same editorial serif as the
-   h1 they lead to. */
+/* Post titles in listings are content, not chrome - carry the same weight and
+   tracking as the h1 they lead to, a step down in size. */
 .archive__item-title {
-  font-family: var(--serif);
-  font-weight: 400;
-  letter-spacing: -0.01em;
+  font-family: var(--sans);
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 /* Social icons keep their brand colours. The "no blue" rule in 2.3 is about
@@ -361,7 +347,7 @@ select:focus-visible,
 .subscribe__copy {
   margin: 0 0 1.25rem;
   max-width: 28rem;
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: 17px;
   line-height: 1.55;
   color: var(--ink);
@@ -497,7 +483,7 @@ select:focus-visible,
    body and section-heading treatments. */
 .page__content {
   .series-landing__argument {
-    font-family: var(--serif);
+    font-family: var(--sans);
     font-size: 21px;
     line-height: 1.55;
     color: var(--ink);
@@ -534,12 +520,12 @@ select:focus-visible,
     margin: 0 0 0.5rem;
     padding: 0;
     border: 0;
-    font-family: var(--serif);
-    font-weight: 400;
-    font-size: 26px;
-    line-height: 1.2;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 1.25;
     text-transform: none;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
   }
 
   .series-landing__description {
@@ -578,12 +564,12 @@ select:focus-visible,
     margin: 0 0 0.5rem;
     padding: 0;
     border: 0;
-    font-family: var(--serif);
-    font-weight: 400;
-    font-size: 26px;
-    line-height: 1.2;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 1.25;
     text-transform: none;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
   }
 
   .tools-list__description {

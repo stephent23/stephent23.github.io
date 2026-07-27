@@ -47,25 +47,29 @@ $masthead-link-color-hover: $ink !default;
 $navicon-link-color-hover: $muted !default;
 
 /* Typography
-   Body is Newsreader; headings, navigation, metadata and UI are IBM Plex Sans;
-   Plex Mono is reserved for code. Georgia/system stacks are the fallbacks the
-   browser paints during swap. */
-$serif: "Newsreader", Georgia, "Times New Roman", serif !default;
+   IBM Plex throughout - Plex Sans for body, headings, navigation and UI, Plex
+   Mono for code. One superfamily rather than a serif/sans pairing: the site
+   reads as a single designed system, and it costs nothing extra to load since
+   the sans was already required for the chrome. The system stack is the
+   fallback the browser paints during swap. */
 $sans-serif: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto,
   sans-serif !default;
 $monospace: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace !default;
+$serif: $sans-serif !default; // no serif in the system; alias so theme partials referencing it stay consistent
 
-$global-font-family: $serif !default;
+$global-font-family: $sans-serif !default;
 $header-font-family: $sans-serif !default;
 $caption-font-family: $sans-serif !default;
 
-/* Body settles at 19px on desktop, per the type spec. The theme derives its
-   medium/large/x-large steps from $doc-font-size by multiplying, which would
-   overshoot to 26px, so all four steps are pinned explicitly. */
-$doc-font-size: 17px !default;
-$doc-font-size-medium: 18px !default;
-$doc-font-size-large: 19px !default;
-$doc-font-size-x-large: 19px !default;
+/* Body settles at 18px on desktop. Sans wants a slightly smaller size and more
+   leading than a serif at the same optical size, so this is 18/1.7 rather than
+   the 19/1.65 the serif was set at. The theme derives its medium/large/x-large
+   steps from $doc-font-size by multiplying, which would overshoot, so all four
+   steps are pinned explicitly. */
+$doc-font-size: 16px !default;
+$doc-font-size-medium: 17px !default;
+$doc-font-size-large: 18px !default;
+$doc-font-size-x-large: 18px !default;
 
 /* Syntax highlighting - a light base16 that sits on $paper-alt rather than the
    theme's default dark slab, which would be the loudest thing on the page. */
