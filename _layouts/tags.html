@@ -1,0 +1,60 @@
+---
+layout: archive
+---
+{%- assign locale = page.locale | default: layout.locale | default: site.locale %}
+
+{{ content }}
+
+{% comment %}
+  Local override of the theme's tags.html.
+
+  Upstream delegates to the shared `posts-taxonomy.html` include (also used by
+  categories.html), which renders every post under every tag using the full
+  archive-single.html card. A post normally has one category, so that's fine
+  on /categories/, but posts often carry 6-8 tags, so the same full card
+  (image/eyebrow/excerpt/meta) was repeating verbatim across most of the page.
+  This inlines the same structure - jump index, section wrapper, `#slug` ids,
+  back-to-top link - but renders each post as a single compact line instead,
+  and only for tags, so /categories/ is untouched.
+{% endcomment %}
+
+{% assign items_max = 0 %}
+{% for tag in site.tags %}
+  {% if tag[1].size > items_max %}
+    {% assign items_max = tag[1].size %}
+  {% endif %}
+{% endfor %}
+
+<ul class="taxonomy__index">
+  {% for i in (1..items_max) reversed %}
+    {% for tag in site.tags %}
+      {% if tag[1].size == i %}
+        <li>
+          <a href="#{{ tag[0] | slugify }}">
+            <strong>{{ tag[0] }}</strong> <span class="taxonomy__count">{{ i }}</span>
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</ul>
+
+{% for i in (1..items_max) reversed %}
+  {% for tag in site.tags %}
+    {% if tag[1].size == i %}
+      <section id="{{ tag[0] | slugify }}" class="taxonomy__section">
+        <h2 class="archive__subtitle">{{ tag[0] }}</h2>
+        <ul class="taxonomy__compact-list">
+          {% assign tag_posts = tag.last | sort: 'date' | reverse %}
+          {% for post in tag_posts %}
+            <li>
+              <a href="{{ post.url | relative_url }}">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+            </li>
+          {% endfor %}
+        </ul>
+        <a href="#page-title" class="back-to-top">{{ site.data.ui-text[locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
+      </section>
+    {% endif %}
+  {% endfor %}
+{% endfor %}
