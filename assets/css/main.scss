@@ -99,10 +99,12 @@ h1.page__title {
 }
 
 /* h3 - a clear step down from h2, no rule, so the two levels are never
-   confused when scanning. */
+   confused when scanning. Sized above the 18px body (was 17px, which read
+   smaller than the paragraph text sitting under it - a heading that
+   recedes below its own body defeats the point of a heading). */
 .page__content h3 {
   font-family: var(--sans);
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 600;
   letter-spacing: -0.01em;
   line-height: 1.35;
