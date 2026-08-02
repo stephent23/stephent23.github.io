@@ -1,7 +1,7 @@
 {% comment %}
   Local override of the theme's archive-single.
 
-  Two changes from upstream:
+  Three changes from upstream:
 
   1. The category is rendered as an eyebrow above the title, so a listing can be
      scanned by subject as well as by headline.
@@ -10,9 +10,13 @@
      which produced run-on text like "Part 1 of Building the AI-Ready SOC series
      The real opportunity is not faster alerts..." - two separate sentences
      mashed together mid-thought. Every post now has a real description.
+  3. Posts with a `series` front matter field get a small labelled link below
+     the summary, so a listing shows a post is part of a series without having
+     to open it. Mirrors the data source `series-nav.html` uses on the post
+     itself (`site.data.series`).
 
-  Order is eyebrow -> title -> summary -> meta: the date and read time are
-  useful once a headline has caught your eye, not before it.
+  Order is eyebrow -> title -> summary -> series -> meta: the date and read
+  time are useful once a headline has caught your eye, not before it.
 {% endcomment %}
 {% assign locale = include.locale | default: site.locale %}
 {% if post.header.teaser %}
@@ -51,6 +55,13 @@
       <p class="archive__item-excerpt p-summary" itemprop="description">{{ post.description }}</p>
     {% elsif post.excerpt %}
       <p class="archive__item-excerpt p-summary" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>
+    {% endif %}
+
+    {% if post.series %}
+      {% assign series_meta = site.data.series[post.series] %}
+      <p class="archive__item-series">
+        <a href="{{ "/series/" | append: post.series | append: "/" | relative_url }}">Part {{ post.series_part }} of {{ series_meta.title | default: post.series }}</a>
+      </p>
     {% endif %}
 
     {% include page__meta.html locale=locale type=include.type %}

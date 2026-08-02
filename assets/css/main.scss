@@ -274,12 +274,106 @@ figure.highlight {
   margin: 0 0 0.6rem;
 }
 
+/* Series membership, when a post has one. Same small-label language as the
+   eyebrow above but muted rather than claret, so it reads as wayfinding
+   ("there's more like this") rather than competing for the accent budget. */
+.archive__item-series {
+  font-size: 12px;
+  margin: 0 0 0.6rem;
+
+  a {
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+
+    &:hover,
+    &:focus {
+      color: var(--ink);
+      border-bottom-color: var(--accent);
+    }
+  }
+}
+
 /* Date and read time are useful once a headline has caught your eye, not
    before it - demoted below the summary. */
 .archive__item .page__meta {
   font-size: 12px;
   color: var(--muted);
   margin: 0;
+}
+
+/* Series nav on the post itself (series-nav.html) - otherwise unstyled theme
+   leftovers (bare nav/ol/li). Same quiet label language as the eyebrow and
+   listing series line above, with the current part picked out in ink so a
+   reader can place themselves in the series at a glance. */
+.series-nav {
+  margin: 2.5rem 0;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: var(--paper-alt);
+}
+
+.series-nav__label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin: 0 0 0.75rem;
+
+  a {
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+
+    &:hover,
+    &:focus {
+      color: var(--ink);
+      border-bottom-color: var(--accent);
+    }
+  }
+}
+
+.series-nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.series-nav__item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 0.35rem 0;
+  font-size: 14px;
+}
+
+.series-nav__part {
+  flex: 0 0 auto;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.series-nav__title {
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+
+  &:hover,
+  &:focus {
+    color: var(--ink);
+    border-bottom-color: var(--accent);
+  }
+}
+
+.series-nav__item--current {
+  .series-nav__part,
+  .series-nav__title {
+    color: var(--ink);
+    font-weight: 600;
+  }
 }
 
 /* Social icons keep their brand colours. The "no blue" rule in 2.3 is about
