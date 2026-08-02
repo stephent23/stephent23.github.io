@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 600" width="920" height="600" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" role="img" aria-label="The codified knowledge base: playbooks, queries, detections and skills held in version control, applied by investigations run by analysts or AI, with gaps returning as pull requests.">
+  <rect x="0" y="0" width="920" height="600" fill="#fbfcfd"/>
+
+  <text x="40" y="46" font-size="20" font-weight="600" fill="#111827">The codified knowledge base</text>
+  <text x="40" y="70" font-size="14" fill="#5b6673">One source of truth, readable by analysts and machines alike</text>
+
+  <rect x="40" y="96" width="560" height="404" rx="14" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="7 5"/>
+  <text x="60" y="124" font-size="13" font-weight="600" fill="#475569" letter-spacing="0.4">VERSION-CONTROLLED REPOSITORY</text>
+
+  <rect x="64" y="142" width="248" height="160" rx="10" fill="#e9f1f9" stroke="#1e4c7c" stroke-width="1.5"/>
+  <text x="84" y="172" font-size="16" font-weight="600" fill="#1e4c7c">Playbooks</text>
+  <text x="84" y="196" font-size="13" fill="#243b53">Pose the questions</text>
+  <text x="84" y="224" font-size="12.5" fill="#5b6673">Held per category, not per</text>
+  <text x="84" y="242" font-size="12.5" fill="#5b6673">detection: malware, host</text>
+  <text x="84" y="260" font-size="12.5" fill="#5b6673">compromise, credential misuse,</text>
+  <text x="84" y="278" font-size="12.5" fill="#5b6673">data exfiltration, DDoS</text>
+
+  <rect x="328" y="142" width="248" height="160" rx="10" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+  <text x="348" y="172" font-size="16" font-weight="600" fill="#334155">Queries</text>
+  <text x="348" y="196" font-size="13" fill="#243b53">Gather the evidence</text>
+  <text x="348" y="224" font-size="12.5" fill="#5b6673">Parameterised by entity, with an</text>
+  <text x="348" y="242" font-size="12.5" fill="#5b6673">implementation per platform.</text>
+  <text x="348" y="260" font-size="12.5" fill="#5b6673">Reviewed and tested, so an</text>
+  <text x="348" y="278" font-size="12.5" fill="#5b6673">empty result means something</text>
+
+  <rect x="64" y="322" width="248" height="156" rx="10" fill="#fdf3e4" stroke="#b45309" stroke-width="1.5"/>
+  <text x="84" y="352" font-size="16" font-weight="600" fill="#b45309">Detections</text>
+  <text x="84" y="376" font-size="13" fill="#243b53">Explain why the alert fired</text>
+  <text x="84" y="404" font-size="12.5" fill="#5b6673">The logic, the behaviour it</text>
+  <text x="84" y="422" font-size="12.5" fill="#5b6673">was written to catch, and</text>
+  <text x="84" y="440" font-size="12.5" fill="#5b6673">the assumptions behind it</text>
+
+  <rect x="328" y="322" width="248" height="156" rx="10" fill="#e8f5ec" stroke="#15803d" stroke-width="1.5"/>
+  <text x="348" y="352" font-size="16" font-weight="600" fill="#15803d">Skills</text>
+  <text x="348" y="376" font-size="13" fill="#243b53">Carry the procedures</text>
+  <text x="348" y="404" font-size="12.5" fill="#5b6673">How the work is done and</text>
+  <text x="348" y="422" font-size="12.5" fill="#5b6673">written up: timelines, evidence</text>
+  <text x="348" y="440" font-size="12.5" fill="#5b6673">records, analysis to a</text>
+  <text x="348" y="458" font-size="12.5" fill="#5b6673">consistent standard</text>
+
+
+  <rect x="672" y="196" width="208" height="200" rx="12" fill="#ffffff" stroke="#1f2937" stroke-width="1.75"/>
+  <text x="696" y="234" font-size="16" font-weight="600" fill="#111827">Investigation</text>
+  <text x="696" y="256" font-size="13" fill="#5b6673">analyst or AI</text>
+  <line x1="696" y1="272" x2="856" y2="272" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="696" y="298" font-size="12.5" fill="#243b53">Reasons over the same</text>
+  <text x="696" y="316" font-size="12.5" fill="#243b53">knowledge, every time,</text>
+  <text x="696" y="334" font-size="12.5" fill="#243b53">whoever is on shift</text>
+  <text x="696" y="366" font-size="12.5" font-style="italic" fill="#5b6673">Free to go further than</text>
+  <text x="696" y="384" font-size="12.5" font-style="italic" fill="#5b6673">the baseline asks</text>
+
+  <path d="M 600 292 L 666 292" fill="none" stroke="#1f2937" stroke-width="2" marker-end="url(#arrowDark)"/>
+  <text x="606" y="282" font-size="12.5" font-weight="600" fill="#1f2937">applies</text>
+
+  <path d="M 776 400 L 776 540 L 320 540 L 320 506" fill="none" stroke="#15803d" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrowGreen)"/>
+  <text x="548" y="532" font-size="12.5" font-weight="600" fill="#15803d" text-anchor="middle">gaps become pull requests</text>
+
+  <text x="40" y="578" font-size="12.5" fill="#5b6673">Every change reviewed, attributed and reversible — so drift is visible rather than silent.</text>
+
+  <defs>
+    <marker id="arrowDark" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#15803d"/>
+    </marker>
+  </defs>
+</svg>
