@@ -4,6 +4,8 @@ title: "The Future SOC Analyst: Directing the Known, Investigating the Novel"
 tags: [AI, SOC, Security Operations, Cyber Defence, Critical Thinking]
 category: Security Operations
 toc: true
+series: ai-ready-soc
+series_part: 3
 ---
 
 *Part 3 of Building the AI-Ready SOC series*
