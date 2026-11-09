@@ -1,7 +1,7 @@
 ---
 type: posts
 title: "The Future SOC Analyst: Directing the Known, Investigating the Novel"
-description: "As AI takes over routine investigation, the SOC analyst directs the AI, investigates the novel and leads incidents, and developing people for that role needs deliberate design. Part 3 of a series."
+description: "As AI takes over routine investigation, the SOC analyst directs the AI, investigates the novel and leads incidents, and developing people for that role needs deliberate design."
 tags: [AI, SOC, Security Operations, Cyber Defence, Critical Thinking]
 category: Security Operations
 toc: true
