@@ -386,8 +386,7 @@ figure.highlight {
    contents header into a solid claret block - far and away the loudest thing on
    the page, and well past the 2% budget for the accent. Reduced to a quiet
    label; the accent stays for the rules that earn it. */
-.sidebar .nav__title,
-.toc .nav__title {
+.sidebar .nav__title {
   background: var(--paper-alt);
   color: var(--muted);
   font-family: var(--sans);
@@ -398,16 +397,98 @@ figure.highlight {
   border-bottom: 1px solid var(--rule);
 }
 
+/* Table of contents: a quiet left rail rather than a boxed card. No
+   background, border or shadow; a hairline runs down the left and the section
+   being read is marked with the accent. Links are regular weight - the theme's
+   bold-with-dividers list read as a second navigation bar. On narrow screens
+   the <details> in _layouts/single.html starts collapsed. */
 .toc {
-  border: 1px solid var(--rule);
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  margin: 0 0 1.75rem;
+  font-family: var(--sans);
 
-  .toc__menu a {
-    font-family: var(--sans);
-    font-size: 12px;
+  .toc__summary {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0;
+    margin-bottom: 0.4rem;
+    cursor: pointer;
+    list-style: none;
     color: var(--muted);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::after {
+      content: "";
+      width: 0.45rem;
+      height: 0.45rem;
+      margin-left: auto;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: rotate(45deg) translateY(-2px);
+      transition: transform 0.15s ease;
+    }
 
     &:hover {
       color: var(--ink);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+  }
+
+  .toc__details[open] > .toc__summary::after {
+    transform: rotate(-135deg) translateY(-2px);
+  }
+
+  .toc__menu {
+    margin: 0;
+    padding: 0;
+    border-left: 1px solid var(--rule);
+
+    a {
+      display: block;
+      padding: 0.3rem 0.9rem;
+      margin-left: -1px;
+      border: 0;
+      border-left: 2px solid transparent;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1.4;
+      color: var(--muted);
+      transition: color 0.12s ease, border-color 0.12s ease;
+
+      &:hover,
+      &:focus-visible {
+        color: var(--ink);
+        border-left-color: var(--rule);
+      }
+    }
+
+    /* Scroll-spy (the theme marks the current section .active). */
+    .active > a,
+    a.active {
+      color: var(--ink);
+      font-weight: 500;
+      background: transparent;
+      border-left-color: var(--accent);
+    }
+
+    li ul > li a {
+      padding-left: 1.6rem;
     }
   }
 }
